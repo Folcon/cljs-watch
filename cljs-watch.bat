@@ -1,4 +1,4 @@
-:@echo off
+@echo off
 setLocal EnableDelayedExpansion
 
 if "%CLOJURESCRIPT_HOME%" == "" goto ERROR_HOME
