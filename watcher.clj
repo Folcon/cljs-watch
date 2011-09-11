@@ -7,7 +7,7 @@
 
   (defn text-timestamp []
     (let [c (Calendar/getInstance)
-          f (SimpleDateFormat. \"HH:mm:ss\")]
+          f (SimpleDateFormat. "HH:mm:ss")]
       (.format f (.getTime c))))
   
   (def default-opts {:optimizations :simple
