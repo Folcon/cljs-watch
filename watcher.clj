@@ -2,7 +2,14 @@
 (require '[cljs.closure :as cljsc])
 
 (do
+  (import '[java.util Calendar])
+  (import '[java.text SimpleDateFormat])
 
+  (defn text-timestamp []
+    (let [c (Calendar/getInstance)
+          f (SimpleDateFormat. \"HH:mm:ss\")]
+      (.format f (.getTime c))))
+  
   (def default-opts {:optimizations :simple
                      :pretty-print true
                      :output-dir "resources/public/cljs/"
@@ -36,7 +43,7 @@
     (some newer? (find-cljs dir)))
 
   (defn watcher-print [& text]
-    (print ":: watcher :: ")
+    (print (str (text-timestamp) ":: watcher ::"))
     (apply print text)
     (flush))
 
