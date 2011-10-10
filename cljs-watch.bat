@@ -3,7 +3,7 @@ setLocal EnableDelayedExpansion
 
 if "%CLOJURESCRIPT_HOME%" == "" goto ERROR_HOME
 
-set CLASSPATH=.;src\;%CLOJURESCRIPT_HOME%src\clj;%CLOJURESCRIPT_HOME%src\cljs
+set CLASSPATH=.;src\;%CLOJURESCRIPT_HOME%\src\clj;%CLOJURESCRIPT_HOME%\src\cljs
 for /R "%CLOJURESCRIPT_HOME%\lib" %%a in (*.jar) do (
   set CLASSPATH=!CLASSPATH!;%%a
 )
